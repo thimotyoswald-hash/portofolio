@@ -43,29 +43,34 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-brand-border bg-brand-bg/90 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand Logo */}
+    <header className="sticky top-0 z-50 w-full border-b border-brand-border bg-brand-bg/80 backdrop-blur-xl transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        {/* Brand Logo & Studio Mark */}
         <a
           href="#"
-          className="flex items-center gap-2.5 font-bold text-lg text-brand-text tracking-tight group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg p-1"
+          className="flex items-center gap-3 font-bold text-lg text-brand-text tracking-tight group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-xl p-1"
         >
-          <span className="w-8 h-8 rounded-lg bg-brand-accent/15 text-brand-accent border border-brand-accent/30 flex items-center justify-center font-mono text-sm font-extrabold group-hover:scale-105 transition-transform">
+          <span className="w-9 h-9 rounded-xl bg-brand-surface border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-sm font-extrabold group-hover:scale-105 group-hover:border-brand-accent transition-all shadow-sm">
             OT
           </span>
-          <span className="hidden sm:inline font-semibold">{SITE_CONFIG.name}</span>
+          <div className="hidden sm:block leading-none">
+            <span className="block font-bold text-sm tracking-tight">{SITE_CONFIG.name}</span>
+            <span className="block font-mono text-[10px] text-brand-muted tracking-wider uppercase mt-0.5">
+              Software Studio
+            </span>
+          </div>
         </a>
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-1 lg:gap-2"
+          className="hidden md:flex items-center gap-1.5 p-1.5 rounded-2xl bg-brand-surface/60 border border-brand-border/60"
           aria-label="Navigasi Utama"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover rounded-lg transition-colors min-h-[44px] flex items-center"
+              className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-brand-muted hover:text-brand-text hover:bg-brand-surface rounded-xl transition-all min-h-[44px] flex items-center"
             >
               {link.label}
             </a>
@@ -73,15 +78,15 @@ export function Navbar() {
         </nav>
 
         {/* Action Controls: Lang, Theme, WhatsApp CTA */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           {/* Language Toggle */}
           <button
             type="button"
             onClick={toggleLanguage}
             aria-label={`Ubah bahasa ke ${language === "id" ? "English" : "Bahasa Indonesia"}`}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-lg border border-brand-border bg-brand-surface text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover transition-colors min-h-[44px] min-w-[44px] justify-center"
+            className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-bold rounded-xl border border-brand-border bg-brand-surface text-brand-muted hover:text-brand-text hover:border-brand-accent/40 transition-colors min-h-[44px] min-w-[44px] justify-center"
           >
-            <Globe className="w-4 h-4 text-brand-accent" aria-hidden="true" />
+            <Globe className="w-3.5 h-3.5 text-brand-accent" aria-hidden="true" />
             <span>{language.toUpperCase()}</span>
           </button>
 
@@ -95,7 +100,7 @@ export function Navbar() {
                   ? "Beralih ke mode terang (Light mode)"
                   : "Beralih ke mode gelap (Dark mode)"
               }
-              className="p-2 rounded-lg border border-brand-border bg-brand-surface text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-2.5 rounded-xl border border-brand-border bg-brand-surface text-brand-muted hover:text-brand-text hover:border-brand-accent/40 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               {resolvedTheme === "dark" ? (
                 <Sun className="w-4 h-4 text-amber-400" aria-hidden="true" />
@@ -110,7 +115,7 @@ export function Navbar() {
             href={getWhatsAppLink(language)}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 px-3.5 py-2 text-sm font-semibold rounded-lg bg-brand-accent text-white hover:opacity-95 shadow-sm transition-all min-h-[44px]"
+            className="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl bg-brand-accent text-white hover:opacity-95 shadow-md shadow-brand-accent/20 transition-all min-h-[44px]"
           >
             <MessageSquare className="w-4 h-4" aria-hidden="true" />
             <span>{t.nav.whatsappCta}</span>
@@ -123,7 +128,7 @@ export function Navbar() {
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-panel"
             aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
-            className="md:hidden p-2 rounded-lg border border-brand-border bg-brand-surface text-brand-text hover:bg-brand-surface-hover min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="md:hidden p-2.5 rounded-xl border border-brand-border bg-brand-surface text-brand-text hover:bg-brand-surface-hover min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             {mobileMenuOpen ? (
               <X className="w-5 h-5" aria-hidden="true" />
@@ -138,24 +143,24 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-panel"
-          className="md:hidden border-t border-brand-border bg-brand-surface px-4 py-4 space-y-2 shadow-lg"
+          className="md:hidden border-t border-brand-border bg-brand-surface px-5 py-6 space-y-3 shadow-2xl animate-fade-in"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 rounded-lg text-base font-medium text-brand-text hover:bg-brand-surface-hover transition-colors min-h-[44px] flex items-center"
+              className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider text-brand-text hover:bg-brand-surface-hover transition-colors min-h-[44px] flex items-center"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-2 border-t border-brand-border">
+          <div className="pt-4 border-t border-brand-border">
             <a
               href={getWhatsAppLink(language)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-brand-accent text-white font-semibold text-sm min-h-[44px]"
+              className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-brand-accent text-white font-bold text-xs uppercase tracking-wider min-h-[44px]"
             >
               <MessageSquare className="w-4 h-4" aria-hidden="true" />
               <span>{t.nav.whatsappCta}</span>

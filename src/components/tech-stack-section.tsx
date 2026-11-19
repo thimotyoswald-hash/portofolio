@@ -18,17 +18,20 @@ export function TechStackSection() {
     <section
       id="stack"
       aria-labelledby="stack-title"
-      className="py-16 md:py-24 border-b border-brand-border bg-brand-surface/20"
+      className="py-20 md:py-32 border-b border-brand-border bg-brand-surface/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-semibold tracking-wider uppercase text-brand-accent">
-            {t.stack.badge}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="w-6 h-px bg-brand-accent" aria-hidden="true" />
+            <span className="text-xs font-mono font-semibold tracking-widest uppercase text-brand-accent">
+              {t.stack.badge}
+            </span>
+          </div>
           <h2
             id="stack-title"
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight"
           >
             {t.stack.title}
           </h2>
@@ -38,14 +41,14 @@ export function TechStackSection() {
         </div>
 
         {/* Categories Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.stack.categories.map((cat, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl border border-brand-border bg-brand-surface space-y-4 hover:border-brand-accent/40 transition-colors"
+              className="p-7 rounded-3xl border border-brand-border bg-brand-surface hover:border-brand-accent/50 hover:shadow-xl transition-all duration-300 space-y-6"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-brand-accent-muted border border-brand-accent/20 flex items-center justify-center">
+              <div className="flex items-center gap-3.5">
+                <div className="w-11 h-11 rounded-2xl bg-brand-bg border border-brand-border flex items-center justify-center">
                   {categoryIcons[idx % categoryIcons.length]}
                 </div>
                 <h3 className="text-base font-bold text-brand-text">
@@ -53,14 +56,14 @@ export function TechStackSection() {
                 </h3>
               </div>
 
-              {/* Skills list */}
-              <ul className="space-y-2 pt-2">
+              {/* Skills List */}
+              <ul className="space-y-2.5 pt-1">
                 {cat.skills.map((skill, sIdx) => (
                   <li
                     key={sIdx}
-                    className="flex items-center gap-2 text-xs font-mono text-brand-muted"
+                    className="flex items-center gap-2.5 text-xs font-mono text-brand-muted hover:text-brand-text transition-colors"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-accent/60" aria-hidden="true" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-accent/70" aria-hidden="true" />
                     <span>{skill}</span>
                   </li>
                 ))}

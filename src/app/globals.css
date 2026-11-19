@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* Light Theme tokens - WCAG AA compliant */
-  --bg-primary: #F8FAFC;
+  /* Light Theme tokens - Luxury Ceramic & Burnished Bronze */
+  --bg-primary: #FBFBFD;
   --bg-surface: #FFFFFF;
-  --bg-surface-hover: #F1F5F9;
-  --border-subtle: #E2E8F0;
-  --border-focus: #0284C7;
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --accent-primary: #0284C7;
-  --accent-muted: rgba(2, 132, 199, 0.08);
+  --bg-surface-hover: #F4F5F8;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-focus: #9A7228;
+  --text-primary: #090C10;
+  --text-secondary: #4B5563;
+  --accent-primary: #9A7228;
+  --accent-muted: rgba(154, 114, 40, 0.08);
   --color-success: #059669;
 }
 
 .dark {
-  /* Dark Theme tokens - WCAG AA & AAA compliant */
-  --bg-primary: #0A0D14;
-  --bg-surface: #121624;
-  --bg-surface-hover: #1A2033;
-  --border-subtle: #222A42;
-  --border-focus: #38BDF8;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --accent-primary: #38BDF8;
-  --accent-muted: rgba(56, 189, 248, 0.12);
+  /* Dark Theme tokens - Luxury Obsidian Onyx & Champagne Gold */
+  --bg-primary: #060709;
+  --bg-surface: #0E1118;
+  --bg-surface-hover: #161B26;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #D4AF37;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --accent-primary: #D4AF37;
+  --accent-muted: rgba(212, 175, 55, 0.12);
   --color-success: #34D399;
 }
 
@@ -38,7 +38,7 @@
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -65,7 +65,19 @@
   /* R-32: Visible high-contrast focus indicator */
   :focus-visible {
     outline: 2px solid var(--border-focus);
-    outline-offset: 2px;
+    outline-offset: 3px;
+  }
+
+  /* Subtle luxury backdrop blur */
+  .glass-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%), var(--bg-surface);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   }
 
   /* Respect reduced motion */

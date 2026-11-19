@@ -3,15 +3,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import * as THREE from "three";
-import { Eye, RotateCcw } from "lucide-react";
+import { Sparkles, Layers } from "lucide-react";
+
+type MaterialPreset = "chrome" | "gold" | "glass";
 
 export function Hero3DScene() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme } = useTheme();
-  const [wireframeMode, setWireframeMode] = useState<boolean>(false);
-  const [isInteracting, setIsInteracting] = useState<boolean>(false);
-  const wireframeModeRef = useRef<boolean>(wireframeMode);
-  wireframeModeRef.current = wireframeMode;
+  const [preset, setPreset] = useState<MaterialPreset>("chrome");
+  const presetRef = useRef<MaterialPreset>(preset);
+  presetRef.current = preset;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -23,13 +24,13 @@ export function Hero3DScene() {
 
     // Scene & Camera setup
     const scene = new THREE.Scene();
-    const width = container.clientWidth || 400;
-    const height = container.clientHeight || 400;
+    const width = container.clientWidth || 460;
+    const height = container.clientHeight || 460;
 
-    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.z = 5.2;
+    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
+    camera.position.set(0, 0, 5.4);
 
-    // Renderer setup with anti-aliasing & alpha
+    // Renderer setup with high color fidelity
     let renderer: THREE.WebGLRenderer | null = null;
     try {
       renderer = new THREE.WebGLRenderer({
@@ -39,61 +40,92 @@ export function Hero3DScene() {
       });
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = isDark ? 1.25 : 1.1;
       container.appendChild(renderer.domElement);
     } catch {
-      // Graceful fallback if WebGL is unavailable
       return;
     }
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(isDark ? 0x223048 : 0xffffff, isDark ? 1.4 : 1.8);
+    // Studio Lighting Array
+    const ambientLight = new THREE.AmbientLight(
+      isDark ? 0x1a202c : 0xf8fafc,
+      isDark ? 1.6 : 2.0
+    );
     scene.add(ambientLight);
 
-    const pointLight1 = new THREE.PointLight(isDark ? 0x38bdf8 : 0x0284c7, 3.5, 20);
-    pointLight1.position.set(4, 4, 4);
-    scene.add(pointLight1);
+    // Key Light (Warm Champagne Studio Spotlight)
+    const keyLight = new THREE.DirectionalLight(0xfff1dc, 3.8);
+    keyLight.position.set(4, 5, 4);
+    scene.add(keyLight);
 
-    const pointLight2 = new THREE.PointLight(isDark ? 0x34d399 : 0x0369a1, 2.5, 20);
-    pointLight2.position.set(-4, -3, 3);
-    scene.add(pointLight2);
+    // Fill Light (Cool Platinum Rim Light)
+    const fillLight = new THREE.DirectionalLight(0x90b4d4, 2.4);
+    fillLight.position.set(-5, -3, 3);
+    scene.add(fillLight);
 
-    // Group for all core 3D objects
-    const coreGroup = new THREE.Group();
-    scene.add(coreGroup);
+    // Top Rim Specular Light
+    const rimLight = new THREE.PointLight(0xffffff, 3.2, 12);
+    rimLight.position.set(0, 4, -2);
+    scene.add(rimLight);
 
-    // 1. Inner Nucleus Core (Faceted Dodecahedron)
-    const nucleusGeometry = new THREE.DodecahedronGeometry(1.2, 0);
-    const nucleusMaterial = new THREE.MeshPhysicalMaterial({
-      color: isDark ? 0x0f172a : 0xe2e8f0,
-      metalness: 0.15,
-      roughness: 0.25,
-      clearcoat: 0.6,
-      clearcoatRoughness: 0.2,
-      flatShading: true,
-      wireframe: false,
-    });
-    const nucleusMesh = new THREE.Mesh(nucleusGeometry, nucleusMaterial);
-    coreGroup.add(nucleusMesh);
+    // 3D Sculpture Group
+    const sculptureGroup = new THREE.Group();
+    scene.add(sculptureGroup);
 
-    // 2. Outer Architectural Lattice (Icosahedron Wireframe Cage)
-    const latticeGeometry = new THREE.IcosahedronGeometry(1.9, 1);
-    const latticeMaterial = new THREE.MeshStandardMaterial({
-      color: isDark ? 0x38bdf8 : 0x0284c7,
-      wireframe: true,
-      transparent: true,
-      opacity: isDark ? 0.85 : 0.7,
-      roughness: 0.4,
-    });
-    const latticeMesh = new THREE.Mesh(latticeGeometry, latticeMaterial);
-    coreGroup.add(latticeMesh);
+    // Geometry: High-resolution sculpted Torus Knot
+    const geometry = new THREE.TorusKnotGeometry(1.22, 0.38, 140, 36, 2, 3);
 
-    // 3. Floating Node Particle Constellation
-    const particleCount = 48;
+    // Material definitions for the presets
+    const getMaterialConfig = (p: MaterialPreset) => {
+      switch (p) {
+        case "gold":
+          return {
+            color: isDark ? 0xd4af37 : 0xb8860b,
+            metalness: 0.92,
+            roughness: 0.16,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.08,
+            transmission: 0,
+            ior: 1.5,
+          };
+        case "glass":
+          return {
+            color: isDark ? 0x1f2937 : 0xe2e8f0,
+            metalness: 0.15,
+            roughness: 0.12,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.05,
+            transmission: 0.58,
+            ior: 1.52,
+            transparent: true,
+            opacity: 0.9,
+          };
+        case "chrome":
+        default:
+          return {
+            color: isDark ? 0xe2e8f0 : 0xd1d5db,
+            metalness: 0.96,
+            roughness: 0.1,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.05,
+            transmission: 0,
+            ior: 1.5,
+          };
+      }
+    };
+
+    const material = new THREE.MeshPhysicalMaterial(getMaterialConfig(presetRef.current));
+    const sculptureMesh = new THREE.Mesh(geometry, material);
+    sculptureGroup.add(sculptureMesh);
+
+    // Subtle Floating Platinum Dust Particles
+    const particleCount = 36;
     const particleGeometry = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount; i++) {
-      const radius = 2.4 + Math.random() * 0.7;
+      const radius = 2.4 + Math.random() * 0.8;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(Math.random() * 2 - 1);
 
@@ -103,17 +135,16 @@ export function Hero3DScene() {
     }
 
     particleGeometry.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
-
     const particleMaterial = new THREE.PointsMaterial({
-      color: isDark ? 0x38bdf8 : 0x0284c7,
-      size: 0.065,
+      color: isDark ? 0xd4af37 : 0x9a7228,
+      size: 0.05,
       transparent: true,
-      opacity: isDark ? 0.9 : 0.8,
+      opacity: 0.65,
     });
     const particles = new THREE.Points(particleGeometry, particleMaterial);
-    coreGroup.add(particles);
+    sculptureGroup.add(particles);
 
-    // Mouse & Touch interaction state
+    // Interactive pointer & drag physics
     let targetRotationX = 0;
     let targetRotationY = 0;
     let isDragging = false;
@@ -122,7 +153,6 @@ export function Hero3DScene() {
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Pointer move listener
     const handlePointerMove = (e: MouseEvent | TouchEvent) => {
       const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
       const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
@@ -130,22 +160,21 @@ export function Hero3DScene() {
       if (isDragging) {
         const deltaX = clientX - previousPointerX;
         const deltaY = clientY - previousPointerY;
-        targetRotationY += deltaX * 0.008;
-        targetRotationX += deltaY * 0.008;
+        targetRotationY += deltaX * 0.007;
+        targetRotationX += deltaY * 0.007;
         previousPointerX = clientX;
         previousPointerY = clientY;
       } else {
         const rect = container.getBoundingClientRect();
         const x = ((clientX - rect.left) / rect.width) * 2 - 1;
         const y = -(((clientY - rect.top) / rect.height) * 2 - 1);
-        targetRotationX = y * 0.45;
-        targetRotationY = x * 0.7;
+        targetRotationX = y * 0.4;
+        targetRotationY = x * 0.6;
       }
     };
 
     const handlePointerDown = (e: MouseEvent | TouchEvent) => {
       isDragging = true;
-      setIsInteracting(true);
       const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
       const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
       previousPointerX = clientX;
@@ -154,7 +183,6 @@ export function Hero3DScene() {
 
     const handlePointerUp = () => {
       isDragging = false;
-      setIsInteracting(false);
     };
 
     container.addEventListener("mousedown", handlePointerDown);
@@ -177,7 +205,7 @@ export function Hero3DScene() {
     const resizeObserver = new ResizeObserver(handleResize);
     resizeObserver.observe(container);
 
-    // Intersection observer: Pause render loop when scrolled offscreen
+    // Pause animation when scrolled outside viewport
     const intersectionObserver = new IntersectionObserver(
       (entries) => {
         isVisible = entries[0].isIntersecting;
@@ -186,8 +214,9 @@ export function Hero3DScene() {
     );
     intersectionObserver.observe(container);
 
-    // Animation Render Loop
-    let clock = new THREE.Clock();
+    // Render loop
+    const clock = new THREE.Clock();
+    let currentPreset = presetRef.current;
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
@@ -195,20 +224,25 @@ export function Hero3DScene() {
 
       const delta = clock.getDelta();
 
-      // Update wireframe state dynamically
-      nucleusMaterial.wireframe = wireframeModeRef.current;
-
-      // Base rotation if reduced-motion is not requested
-      if (!prefersReducedMotion && !isDragging) {
-        coreGroup.rotation.y += 0.35 * delta;
-        latticeMesh.rotation.x -= 0.15 * delta;
-        particles.rotation.y += 0.18 * delta;
+      // Check if preset changed dynamically
+      if (presetRef.current !== currentPreset) {
+        currentPreset = presetRef.current;
+        const newConfig = getMaterialConfig(currentPreset);
+        material.setValues(newConfig);
+        material.needsUpdate = true;
       }
 
-      // Smooth lerp towards pointer/drag target rotation
-      coreGroup.rotation.x += (targetRotationX - coreGroup.rotation.x) * 0.08;
+      // Smooth idle rotation if not reduced motion
+      if (!prefersReducedMotion && !isDragging) {
+        sculptureMesh.rotation.y += 0.28 * delta;
+        sculptureMesh.rotation.x += 0.16 * delta;
+        particles.rotation.y += 0.12 * delta;
+      }
+
+      // Physics interpolation towards target
+      sculptureGroup.rotation.x += (targetRotationX - sculptureGroup.rotation.x) * 0.07;
       if (isDragging) {
-        coreGroup.rotation.y += (targetRotationY - coreGroup.rotation.y) * 0.12;
+        sculptureGroup.rotation.y += (targetRotationY - sculptureGroup.rotation.y) * 0.1;
       }
 
       renderer.render(scene, camera);
@@ -216,7 +250,6 @@ export function Hero3DScene() {
 
     animate();
 
-    // Clean up
     return () => {
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
@@ -234,45 +267,70 @@ export function Hero3DScene() {
           container.removeChild(renderer.domElement);
         }
       }
-      nucleusGeometry.dispose();
-      nucleusMaterial.dispose();
-      latticeGeometry.dispose();
-      latticeMaterial.dispose();
+      geometry.dispose();
+      material.dispose();
       particleGeometry.dispose();
       particleMaterial.dispose();
     };
   }, [resolvedTheme]);
 
   return (
-    <div className="relative w-full aspect-square max-w-[440px] mx-auto select-none flex items-center justify-center">
-      {/* 3D Canvas Container */}
+    <div className="relative w-full aspect-square max-w-[480px] mx-auto select-none flex items-center justify-center">
+      {/* Dynamic ambient studio radial glow behind sculpture */}
+      <div
+        className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-accent/15 via-transparent to-brand-accent/5 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* WebGL Canvas */}
       <div
         ref={containerRef}
-        className="w-full h-full cursor-grab active:cursor-grabbing rounded-2xl touch-none focus:outline-none"
-        aria-label="Interactive 3D Engineering Lattice Model"
+        className="relative z-10 w-full h-full cursor-grab active:cursor-grabbing rounded-3xl touch-none focus:outline-none"
+        aria-label="Liquid Titanium 3D Studio Sculpture"
         role="region"
       />
 
-      {/* Floating 3D Controls Badge */}
-      <div className="absolute bottom-3 right-3 flex items-center gap-1.5 p-1 rounded-xl bg-brand-surface/85 backdrop-blur-sm border border-brand-border text-xs text-brand-muted shadow-sm">
+      {/* Luxury Material Presets Selector */}
+      <div className="absolute bottom-3 right-3 z-20 flex items-center gap-1 p-1 rounded-xl bg-brand-surface/90 backdrop-blur-md border border-brand-border text-xs shadow-xl">
+        <span className="hidden sm:inline px-2 text-[10px] uppercase font-mono tracking-wider text-brand-muted font-semibold">
+          Material:
+        </span>
         <button
           type="button"
-          onClick={() => setWireframeMode(!wireframeMode)}
-          aria-label={wireframeMode ? "Nonaktifkan mode wireframe" : "Aktifkan mode wireframe"}
-          className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
-            wireframeMode
-              ? "bg-brand-accent text-white"
-              : "hover:text-brand-text hover:bg-brand-surface-hover"
+          onClick={() => setPreset("chrome")}
+          aria-label="Pilih material Liquid Chrome"
+          className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+            preset === "chrome"
+              ? "bg-brand-text text-brand-bg shadow-sm"
+              : "text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover"
           }`}
         >
-          <Eye className="w-3.5 h-3.5" aria-hidden="true" />
-          <span>{wireframeMode ? "Shaded" : "Wireframe"}</span>
+          Chrome
         </button>
-      </div>
-
-      {/* Interaction status hint */}
-      <div className="sr-only" aria-live="polite">
-        {isInteracting ? "Sedang memutar model 3D" : "Model 3D diam"}
+        <button
+          type="button"
+          onClick={() => setPreset("gold")}
+          aria-label="Pilih material Champagne Gold"
+          className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+            preset === "gold"
+              ? "bg-amber-500 text-black font-semibold shadow-sm"
+              : "text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover"
+          }`}
+        >
+          Gold
+        </button>
+        <button
+          type="button"
+          onClick={() => setPreset("glass")}
+          aria-label="Pilih material Frosted Glass"
+          className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+            preset === "glass"
+              ? "bg-brand-text text-brand-bg shadow-sm"
+              : "text-brand-muted hover:text-brand-text hover:bg-brand-surface-hover"
+          }`}
+        >
+          Glass
+        </button>
       </div>
     </div>
   );
