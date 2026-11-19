@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "stack": "Tech Stack",
+    "contact": "Contact",
+    "whatsappCta": "WhatsApp Chat"
+  },
+  "hero": {
+    "role": "Full-Stack Software Engineer & Web Developer",
+    "headline": "Building Reliable Web Applications and Software Engineering Solutions",
+    "subheadline": "Helping business owners, companies, and agencies build fast websites, scalable systems, and digital interfaces focused on real operational needs.",
+    "ctaProjects": "View Projects",
+    "ctaWhatsApp": "Chat via WhatsApp",
+    "canvasHint": "Interactive 3D model: rotate using cursor or touch",
+    "status": "Available for freelance projects and agency contracts"
+  },
+  "services": {
+    "badge": "Core Services",
+    "title": "Specialized Development Capabilities",
+    "description": "Focused on clean code, maintainable architecture, and high performance to support your business operations.",
+    "items": [
+      {
+        "id": "fullstack",
+        "title": "Full-Stack Web Applications",
+        "description": "End-to-end web application development using Next.js, Node.js, and relational databases. Designed for scalability and secure data flows.",
+        "deliverables": ["Server & Client Architecture", "Authentication & Authorization", "Database & API Integration"]
+      },
+      {
+        "id": "corporate",
+        "title": "Company & Business Websites",
+        "description": "High-speed business profile sites with structured SEO optimization, intuitive navigation, and responsive layouts across all screen widths.",
+        "deliverables": ["Lighthouse Score 90+ Target", "Content Management System", "Mobile-First Responsive Layout"]
+      },
+      {
+        "id": "custom",
+        "title": "Custom Software & System Integration",
+        "description": "Solving specific technical bottlenecks: workflow automation, payment gateway integration, and connecting third-party APIs.",
+        "deliverables": ["Payment Gateway Integrations", "RESTful & Webhook APIs", "Query & Database Optimization"]
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Featured Work",
+    "title": "Real Projects & Engineering Case Studies",
+    "description": "A curated collection of work focused on technical solutions, modular architecture, and direct utility for users.",
+    "viewCode": "Source Code",
+    "liveDemo": "Live Demo",
+    "details": "Case Study Details",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Engineering Solution",
+    "architectureLabel": "Architecture",
+    "items": [
+      {
+        "id": "project-1",
+        "title": "Enterprise Inventory & Procurement System",
+        "summary": "Multi-warehouse inventory management and supply chain tracking platform with real-time stock reporting.",
+        "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+        "challenge": "Stock synchronization across 4 warehouses suffered race conditions under concurrent order spikes.",
+        "solution": "Implemented Serializable transaction isolation and Redis caching for stock availability to provide immediate responses.",
+        "demoUrl": "https://example.com/demo-inventory",
+        "repoUrl": "https://github.com/oswaldtito/inventory-system",
+        "isPlaceholder": true
+      },
+      {
+        "id": "project-2",
+        "title": "AgroCommerce: B2B Wholesale Marketplace",
+        "summary": "Agricultural commodity trading portal with automated shipping fee calculation and digital invoice verification.",
+        "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+        "challenge": "Slow catalog loading times caused by uncompressed images and unindexed multi-category search queries.",
+        "solution": "Restructured database indexes and added automated WebP image pipeline via CDN, reducing FCP to 1.1 seconds.",
+        "demoUrl": "https://example.com/demo-agrocommerce",
+        "repoUrl": "https://github.com/oswaldtito/agro-commerce",
+        "isPlaceholder": true
+      },
+      {
+        "id": "project-3",
+        "title": "FinTrack: Financial Analytics & Operations Dashboard",
+        "summary": "Analytics dashboard visualizing revenue trends, operational expenditures, and cash flow forecasts.",
+        "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Zod"],
+        "challenge": "Non-technical finance teams struggled to navigate raw transaction tables containing thousands of monthly entries.",
+        "solution": "Designed concise summary metric cards, interactive date filtering, and one-click PDF audit report exports.",
+        "demoUrl": "https://example.com/demo-fintrack",
+        "repoUrl": "https://github.com/oswaldtito/fintrack-dashboard",
+        "isPlaceholder": true
+      }
+    ]
+  },
+  "stack": {
+    "badge": "Technical Skills",
+    "title": "Tech Stack & Engineering Tools",
+    "description": "Technologies I use regularly to build stable, maintainable, and high-performance digital products.",
+    "categories": [
+      {
+        "name": "Frontend Development",
+        "skills": ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "HTML5 & Semantic A11y"]
+      },
+      {
+        "name": "Backend & API",
+        "skills": ["Node.js", "Express.js", "Next.js Route Handlers", "RESTful Architecture", "Zod Validation"]
+      },
+      {
+        "name": "Database & Storage",
+        "skills": ["PostgreSQL", "MySQL", "Prisma ORM", "Redis Caching", "Supabase"]
+      },
+      {
+        "name": "Tools, DevOps & Quality",
+        "skills": ["Git & GitHub Actions", "Docker", "Vercel CI/CD", "Postman", "Lighthouse & Web Vitals", "Figma"]
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Start a Project",
+    "title": "Let Us Discuss Your Project",
+    "description": "Whether you have a new product idea, need a website rebuild, or want technical advice, I am ready to collaborate.",
+    "whatsappHeading": "Fast Response via WhatsApp",
+    "whatsappDescription": "Reach out directly for quick estimates, availability checks, or immediate requirements.",
+    "whatsappButton": "Send WhatsApp Message",
+    "formHeading": "Send a Project Message",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your name or organization",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "name@company.com",
+    "serviceLabel": "Required Service",
+    "serviceOptions": [
+      "Full-Stack Web Application",
+      "Company or Personal Website",
+      "Custom Software Solution / API Integration",
+      "Technical Consulting"
+    ],
+    "messageLabel": "Project Scope & Details",
+    "messagePlaceholder": "Share a brief summary of your project, timeline expectations, or technical challenges...",
+    "submitButton": "Send Message",
+    "submitting": "Sending...",
+    "successMessage": "Thank you! Your message has been sent. I will respond to your email within 24 business hours.",
+    "errorMessage": "Sorry, an error occurred while sending your message. Please reach out directly via WhatsApp.",
+    "copyEmail": "Copy Email",
+    "emailCopied": "Email address copied to clipboard!"
+  },
+  "footer": {
+    "tagline": "Full-Stack Software Engineer & Web Developer. Based in Indonesia, working with local and global clients.",
+    "rights": "All rights reserved.",
+    "verifiedContrast": "Color contrast verified to meet WCAG AA standards."
+  }
+}

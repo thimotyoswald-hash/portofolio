@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme tokens - WCAG AA compliant */
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --border-subtle: #E2E8F0;
+  --border-focus: #0284C7;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --accent-primary: #0284C7;
+  --accent-muted: rgba(2, 132, 199, 0.08);
+  --color-success: #059669;
+}
+
+.dark {
+  /* Dark Theme tokens - WCAG AA & AAA compliant */
+  --bg-primary: #0A0D14;
+  --bg-surface: #121624;
+  --bg-surface-hover: #1A2033;
+  --border-subtle: #222A42;
+  --border-focus: #38BDF8;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --accent-primary: #38BDF8;
+  --accent-muted: rgba(56, 189, 248, 0.12);
+  --color-success: #34D399;
+}
+
+@layer base {
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* R-39: Cursor affordance set once in the base layer */
+  a[href],
+  button,
+  summary,
+  select,
+  input[type="checkbox"],
+  input[type="radio"],
+  label[for],
+  [role="button"],
+  [role="tab"],
+  [role="switch"] {
+    cursor: pointer;
+  }
+
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* R-32: Visible high-contrast focus indicator */
+  :focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "services": "Layanan",
+    "projects": "Proyek",
+    "stack": "Tech Stack",
+    "contact": "Kontak",
+    "whatsappCta": "Konsultasi WhatsApp"
+  },
+  "hero": {
+    "role": "Full-Stack Software Engineer & Web Developer",
+    "headline": "Membangun Aplikasi Web dan Rekayasa Perangkat Lunak yang Andal",
+    "subheadline": "Membantu pemilik bisnis, UMKM, dan agensi mewujudkan website cepat, sistem terukur, serta pengalaman digital yang fokus pada kebutuhan nyata.",
+    "ctaProjects": "Lihat Proyek",
+    "ctaWhatsApp": "Hubungi via WhatsApp",
+    "canvasHint": "Model 3D interaktif: putar dengan kursor atau sentuhan",
+    "status": "Terbuka untuk proyek freelance dan kontrak agensi"
+  },
+  "services": {
+    "badge": "Layanan Utama",
+    "title": "Spesialisasi Pengembangan yang Saya Tawarkan",
+    "description": "Fokus pada kode yang bersih, arsitektur yang mudah dirawat, dan performa tinggi untuk mendukung pertumbuhan bisnis Anda.",
+    "items": [
+      {
+        "id": "fullstack",
+        "title": "Aplikasi Web Full-Stack",
+        "description": "Pengembangan aplikasi web end-to-end dengan Next.js, Node.js, dan database relasional. Dirancang untuk skalabilitas dan alur data yang aman.",
+        "deliverables": ["Arsitektur Server & Client", "Autentikasi & Otorisasi", "Integrasi Database & API"]
+      },
+      {
+        "id": "corporate",
+        "title": "Website Perusahaan & UMKM",
+        "description": "Situs profil bisnis berkecepatan tinggi dengan optimasi SEO terstruktur, navigasi intuitif, dan responsif di ponsel hingga monitor lebar.",
+        "deliverables": ["Optimasi Skor Lighthouse 90+", "Sistem Manajemen Konten", "Desain Responsif Mobile-First"]
+      },
+      {
+        "id": "custom",
+        "title": "Solusi Software & Integrasi Sistem",
+        "description": "Pemecahan masalah teknis spesifik: otomatisasi proses kerja, integrasi payment gateway, dan penyambungan API pihak ketiga.",
+        "deliverables": ["Integrasi Payment Gateway", "RESTful & Webhook APIs", "Optimasi Performa Query"]
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Portofolio Pilihan",
+    "title": "Proyek Nyata & Studi Kasus Rekayasa",
+    "description": "Kumpulan hasil kerja dengan fokus pada solusi teknis, arsitektur modular, dan kegunaan langsung bagi pengguna.",
+    "viewCode": "Lihat Kode",
+    "liveDemo": "Buka Demo",
+    "details": "Detail Studi Kasus",
+    "challengeLabel": "Tantangan",
+    "solutionLabel": "Solusi Rekayasa",
+    "architectureLabel": "Arsitektur",
+    "items": [
+      {
+        "id": "project-1",
+        "title": "Enterprise Inventory & Procurement System",
+        "summary": "Platform manajemen inventaris multi-gudang dan pencatatan rantai pasok dengan pelaporan stok real-time.",
+        "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+        "challenge": "Sinkronisasi stok di 4 gudang berbeda sering mengalami race condition saat pesanan masuk bersamaan.",
+        "solution": "Menerapkan transaksi database berbasis isolasi Serializable dan caching status stok di Redis untuk respons instan.",
+        "demoUrl": "https://example.com/demo-inventory",
+        "repoUrl": "https://github.com/oswaldtito/inventory-system",
+        "isPlaceholder": true
+      },
+      {
+        "id": "project-2",
+        "title": "AgroCommerce: B2B Marketplace & Katalog Digital",
+        "summary": "Platform transaksi komoditas grosir dengan kalkulator logistik otomatis dan verifikasi faktur digital.",
+        "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+        "challenge": "Waktu muat katalog lambat karena gambar produk berukuran besar dan query filter kategori yang tidak terindeks.",
+        "solution": "Restrukturisasi indexing database dan kompresi gambar otomatis ke format WebP via CDN, menurunkan FCP menjadi 1.1 detik.",
+        "demoUrl": "https://example.com/demo-agrocommerce",
+        "repoUrl": "https://github.com/oswaldtito/agro-commerce",
+        "isPlaceholder": true
+      },
+      {
+        "id": "project-3",
+        "title": "FinTrack: Dashboard Keuangan & Monitoring Operasional",
+        "summary": "Antarmuka analitik metrik pendapatan, pengeluaran kas, dan visualisasi grafik arus kas interaktif.",
+        "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Zod"],
+        "challenge": "Pengguna non-teknis kesulitan memahami tabel data keuangan mentah dengan ribuan baris transaksi bulanan.",
+        "solution": "Membuat visualisasi kartu metrik ringkas, filter tanggal reaktif, dan fitur ekspor laporan audit PDF sekali klik.",
+        "demoUrl": "https://example.com/demo-fintrack",
+        "repoUrl": "https://github.com/oswaldtito/fintrack-dashboard",
+        "isPlaceholder": true
+      }
+    ]
+  },
+  "stack": {
+    "badge": "Keahlian Teknis",
+    "title": "Tech Stack & Perkakas Rekayasa",
+    "description": "Teknologi yang saya gunakan secara rutin untuk membangun produk digital yang stabil dan berkinerja tinggi.",
+    "categories": [
+      {
+        "name": "Frontend Development",
+        "skills": ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "HTML5 & Semantic A11y"]
+      },
+      {
+        "name": "Backend & API",
+        "skills": ["Node.js", "Express.js", "Next.js Route Handlers", "RESTful Architecture", "Zod Validation"]
+      },
+      {
+        "name": "Database & Storage",
+        "skills": ["PostgreSQL", "MySQL", "Prisma ORM", "Redis Caching", "Supabase"]
+      },
+      {
+        "name": "Tools, DevOps & Quality",
+        "skills": ["Git & GitHub Actions", "Docker", "Vercel CI/CD", "Postman", "Lighthouse & Web Vitals", "Figma"]
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Mulai Kolaborasi",
+    "title": "Mari Diskusikan Proyek Anda",
+    "description": "Apakah Anda memiliki proyek baru, butuh pembaruan website, atau ingin berdiskusi teknis? Saya siap membantu.",
+    "whatsappHeading": "Respon Cepat via WhatsApp",
+    "whatsappDescription": "Hubungi langsung untuk konsultasi singkat, estimasi waktu, atau diskusi kebutuhan mendesak.",
+    "whatsappButton": "Kirim Pesan WhatsApp",
+    "formHeading": "Kirim Formulir Kontak",
+    "nameLabel": "Nama Lengkap",
+    "namePlaceholder": "Nama Anda atau Perusahaan",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "email@perusahaan.com",
+    "serviceLabel": "Layanan yang Dibutuhkan",
+    "serviceOptions": [
+      "Pembuatan Aplikasi Web Full-Stack",
+      "Website Perusahaan atau Personal",
+      "Solusi Software Khusus / Integrasi API",
+      "Konsultasi Teknis Lainnya"
+    ],
+    "messageLabel": "Detail Kebutuhan Proyek",
+    "messagePlaceholder": "Ceritakan ringkasan proyek, target waktu, atau masalah teknis yang ingin diselesaikan...",
+    "submitButton": "Kirim Pesan Sekarang",
+    "submitting": "Mengirim...",
+    "successMessage": "Terima kasih! Pesan Anda telah terkirim. Saya akan merespon melalui email dalam waktu 1x24 jam kerja.",
+    "errorMessage": "Mohon maaf, terjadi kendala saat mengirim pesan. Silakan gunakan WhatsApp untuk respon instan.",
+    "copyEmail": "Salin Email",
+    "emailCopied": "Email tersalin ke clipboard!"
+  },
+  "footer": {
+    "tagline": "Full-Stack Software Engineer & Web Developer. Berbasis di Indonesia, melayani klien lokal dan global.",
+    "rights": "Semua hak dilindungi undang-undang.",
+    "verifiedContrast": "Kontras warna diverifikasi memenuhi standar WCAG AA."
+  }
+}
