@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useLanguage } from "@/context/language-context";
 import { SITE_CONFIG, getWhatsAppLink } from "@/lib/config";
-import { MessageSquare, Mail, Send, Check, Copy, AlertCircle, Clock, Sparkles } from "lucide-react";
+import { MessageSquare, Mail, Send, Check, Copy, AlertCircle, Clock, Calendar, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -100,11 +100,11 @@ export function ContactSection() {
 
         {/* Dual Luxury Conversion Grid */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left: WhatsApp Fast Track Concierge Card */}
+          {/* Left: WhatsApp Fast Track Concierge Card & Useful Client Notes */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 rounded-3xl border border-brand-border bg-brand-surface space-y-8 shadow-xl">
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
                   <Clock className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Respon Prioritas</span>
                 </div>
@@ -130,7 +130,7 @@ export function ContactSection() {
               {/* Direct Email Box with 1-Click Copy */}
               <div className="pt-6 border-t border-brand-border space-y-2.5">
                 <p className="text-[11px] font-mono text-brand-muted uppercase font-semibold tracking-wider">
-                  Email Korespondensi:
+                  Email Korespondensi Resmi:
                 </p>
                 <div className="flex items-center justify-between p-3.5 rounded-2xl bg-brand-bg border border-brand-border">
                   <div className="flex items-center gap-2.5 text-xs sm:text-sm font-mono text-brand-text truncate">
@@ -151,11 +151,29 @@ export function ContactSection() {
                   </button>
                 </div>
                 {emailCopied && (
-                  <p className="text-xs text-emerald-500 flex items-center gap-1 font-medium">
+                  <p className="text-xs text-emerald-400 flex items-center gap-1 font-medium">
                     <Check className="w-3.5 h-3.5" />
                     <span>{t.contact.emailCopied}</span>
                   </p>
                 )}
+              </div>
+
+              {/* Typical Timeline & Client Assurance */}
+              <div className="pt-6 border-t border-brand-border/60 space-y-3 text-xs text-brand-muted">
+                <div className="flex items-start gap-2.5">
+                  <Calendar className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    {t.contact.typicalTimeline}
+                  </p>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    {language === "id"
+                      ? "Konsultasi awal tanpa komitmen finansial. Kita fokus membedah arsitektur dan kebutuhan nyata terlebih dahulu."
+                      : "Zero-commitment initial architecture consultation. We focus on clarifying scope and real needs first."}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -167,14 +185,19 @@ export function ContactSection() {
               noValidate
               className="p-8 sm:p-10 rounded-3xl border border-brand-border bg-brand-surface space-y-6 shadow-xl"
             >
-              <h3 className="text-2xl font-bold text-brand-text">
-                {t.contact.formHeading}
-              </h3>
+              <div>
+                <h3 className="text-2xl font-bold text-brand-text">
+                  {t.contact.formHeading}
+                </h3>
+                <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+                  {t.contact.formSubtitle}
+                </p>
+              </div>
 
               {status === "success" && (
                 <div
                   role="alert"
-                  className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-sm flex items-start gap-3"
+                  className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-start gap-3"
                 >
                   <Check className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
                   <p>{t.contact.successMessage}</p>
@@ -184,7 +207,7 @@ export function ContactSection() {
               {status === "error" && (
                 <div
                   role="alert"
-                  className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-500 text-sm flex items-start gap-3"
+                  className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-sm flex items-start gap-3"
                 >
                   <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
                   <p>{t.contact.errorMessage}</p>
@@ -209,7 +232,7 @@ export function ContactSection() {
                     className="w-full px-4 py-3 text-sm rounded-xl border border-brand-border bg-brand-bg text-brand-text placeholder:text-brand-muted/40 focus:border-brand-accent focus:outline-none min-h-[48px]"
                   />
                   {errors.name && (
-                    <p className="text-xs text-rose-500 mt-1">{errors.name}</p>
+                    <p className="text-xs text-rose-400 mt-1">{errors.name}</p>
                   )}
                 </div>
 
@@ -230,7 +253,7 @@ export function ContactSection() {
                     className="w-full px-4 py-3 text-sm rounded-xl border border-brand-border bg-brand-bg text-brand-text placeholder:text-brand-muted/40 focus:border-brand-accent focus:outline-none min-h-[48px]"
                   />
                   {errors.email && (
-                    <p className="text-xs text-rose-500 mt-1">{errors.email}</p>
+                    <p className="text-xs text-rose-400 mt-1">{errors.email}</p>
                   )}
                 </div>
               </div>
@@ -273,7 +296,7 @@ export function ContactSection() {
                   className="w-full px-4 py-3 text-sm rounded-xl border border-brand-border bg-brand-bg text-brand-text placeholder:text-brand-muted/40 focus:border-brand-accent focus:outline-none resize-y"
                 />
                 {errors.message && (
-                  <p className="text-xs text-rose-500 mt-1">{errors.message}</p>
+                  <p className="text-xs text-rose-400 mt-1">{errors.message}</p>
                 )}
               </div>
 

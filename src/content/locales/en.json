@@ -1,19 +1,97 @@
 {
   "nav": {
-    "services": "Services",
+    "about": "About Me",
     "projects": "Projects",
+    "services": "Services & Flow",
     "stack": "Tech Stack",
     "contact": "Contact",
     "whatsappCta": "WhatsApp Chat"
   },
   "hero": {
     "role": "Full-Stack Software Engineer & Web Developer",
-    "headline": "Building Reliable Web Applications and Software Engineering Solutions",
-    "subheadline": "Helping business owners, companies, and agencies build fast websites, scalable systems, and digital interfaces focused on real operational needs.",
-    "ctaProjects": "View Projects",
+    "headline": "Architecting Resilient Web Systems & Bespoke Software Solutions",
+    "subheadline": "Helping business owners, growing companies, and digital agencies build fast websites, scalable backends, and digital experiences focused on real operational needs.",
+    "ctaProjects": "Explore Projects",
+    "ctaAbout": "Read My Story",
     "ctaWhatsApp": "Chat via WhatsApp",
     "canvasHint": "Interactive 3D model: rotate using cursor or touch",
-    "status": "Available for freelance projects and agency contracts"
+    "status": "Available for freelance projects and agency contracts",
+    "scrollHint": "Scroll down to explore the engineering journey"
+  },
+  "about": {
+    "badge": "Story & Philosophy",
+    "title": "Building with Intent, Crafting Every Detail",
+    "description": "The story behind the code, engineering tenets, and how I help clients turn complex ideas into high-performance digital products.",
+    "storyChapterTitle": "The Journey of a Digital Craftsman",
+    "storyParagraphs": [
+      "My path in software engineering did not begin with abstract theory, but with a simple curiosity: how do systems operate behind the screen when thousands of requests resolve in milliseconds?",
+      "Over time, I recognized that great code is not merely code that runs without errors in a terminal. Meaningful software bridges complex business logic with user interfaces that feel intuitive, responsive, and respectful of human attention.",
+      "As a Full-Stack Engineer who also explores 3D design and interaction craft, I reject the false tradeoff between visual polish and technical performance. A serious web application must possess a resilient database foundation in the back while delivering effortless interactivity in the front."
+    ],
+    "principlesBadge": "Engineering Manifesto",
+    "principlesTitle": "Three Core Tenets I Uphold in Every Project",
+    "principles": [
+      {
+        "number": "01",
+        "title": "Resilient Architecture First",
+        "desc": "I build software using strict TypeScript types, indexed database queries, and atomic transactions. Code must be readily maintainable by other engineers and built to grow with your business."
+      },
+      {
+        "number": "02",
+        "title": "Uncompromising Performance",
+        "desc": "Speed is a core feature, not an afterthought. I target sub-1.2 second First Contentful Paint, silky 60 FPS WebGL rendering, and Google Lighthouse scores above 90."
+      },
+      {
+        "number": "03",
+        "title": "Transparent Collaboration",
+        "desc": "No technical jargon used to obscure project progress. Clients receive frequent updates, honest timeline estimates, and direct access to code repositories."
+      }
+    ],
+    "processBadge": "Working Process",
+    "processTitle": "How We Will Collaborate Together",
+    "processSubtitle": "A structured four-step engineering journey from initial concept to production-ready software:",
+    "processSteps": [
+      {
+        "step": "Phase 01",
+        "title": "Discovery & Architecture Blueprint",
+        "desc": "We examine the core business bottleneck, target user behavior, and data flows. The result is a clear technical specification, schema blueprint, and milestone timeline."
+      },
+      {
+        "step": "Phase 02",
+        "title": "Interactive Prototype & UX/3D Craft",
+        "desc": "Designing layout structures, typographic scale, and interactive 3D cues. Ensuring mobile ergonomics and tablet reflow before full-scale coding begins."
+      },
+      {
+        "step": "Phase 03",
+        "title": "Full-Stack Development & Validation",
+        "desc": "Building the frontend with Next.js App Router alongside secure server endpoints. Enforcing strict schema validation with Zod and testing database integrations."
+      },
+      {
+        "step": "Phase 04",
+        "title": "Lighthouse Audit, Deploy & Handover",
+        "desc": "Optimizing image formats, verifying WCAG AA contrast standards, setting up dynamic SEO metadata, deploying to Vercel, and delivering full code documentation."
+      }
+    ],
+    "guaranteesBadge": "Client Commitments",
+    "guaranteesTitle": "What You Can Always Expect",
+    "guarantees": [
+      {
+        "title": "Full Source Code Ownership",
+        "desc": "Complete repository access, deployment rights, and code ownership belong entirely to you with zero vendor lock-in."
+      },
+      {
+        "title": "30-Day Post-Launch Bug Warranty",
+        "desc": "Dedicated post-launch technical support to ensure your application runs smoothly in real production environments."
+      },
+      {
+        "title": "Direct Engineer Access",
+        "desc": "Direct communication with me as the lead engineer via WhatsApp or email, without intermediary sales layers."
+      },
+      {
+        "title": "Built-In SEO & Performance Tuning",
+        "desc": "Every page comes equipped with Open Graph tags, sitemap.xml, robots.txt, and search engine friendly URL structures."
+      }
+    ]
   },
   "services": {
     "badge": "Core Services",
@@ -41,23 +119,26 @@
     ]
   },
   "projects": {
-    "badge": "Featured Work",
-    "title": "Real Projects & Engineering Case Studies",
-    "description": "A curated collection of work focused on technical solutions, modular architecture, and direct utility for users.",
+    "badge": "Engineering Case Studies",
+    "title": "Real Stories Behind Software Architectures",
+    "description": "More than a gallery of static mockups, this is an in-depth dissection of operational problems, technical choices, and measurable results.",
     "viewCode": "Source Code",
     "liveDemo": "Live Demo",
-    "details": "Case Study Details",
-    "challengeLabel": "Challenge",
+    "details": "Read Case Study",
+    "challengeLabel": "Core Challenge",
     "solutionLabel": "Engineering Solution",
     "architectureLabel": "Architecture",
+    "impactLabel": "Measurable Impact",
     "items": [
       {
         "id": "project-1",
         "title": "Enterprise Inventory & Procurement System",
         "summary": "Multi-warehouse inventory management and supply chain tracking platform with real-time stock reporting.",
+        "storyContext": "The client operated four separate warehouse facilities handling high daily volumes. Their legacy system frequently recorded negative inventory when two branches fulfilled identical items concurrently.",
         "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
-        "challenge": "Stock synchronization across 4 warehouses suffered race conditions under concurrent order spikes.",
-        "solution": "Implemented Serializable transaction isolation and Redis caching for stock availability to provide immediate responses.",
+        "challenge": "Stock synchronization across 4 warehouses suffered race conditions under concurrent order spikes during peak business hours.",
+        "solution": "Implemented Serializable database isolation levels and Redis caching for instant stock availability queries without concurrency conflicts.",
+        "impact": "Eliminated 100% of double-allocation errors and reduced daily warehouse reconciliation time from 45 minutes to instant queries.",
         "demoUrl": "https://example.com/demo-inventory",
         "repoUrl": "https://github.com/oswaldtito/inventory-system",
         "isPlaceholder": true
@@ -66,9 +147,11 @@
         "id": "project-2",
         "title": "AgroCommerce: B2B Wholesale Marketplace",
         "summary": "Agricultural commodity trading portal with automated shipping fee calculation and digital invoice verification.",
+        "storyContext": "A wholesale distribution business required a digital catalog accessible to suppliers and rural buyers using modest mobile phones on constrained mobile data.",
         "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
         "challenge": "Slow catalog loading times caused by uncompressed images and unindexed multi-category search queries.",
-        "solution": "Restructured database indexes and added automated WebP image pipeline via CDN, reducing FCP to 1.1 seconds.",
+        "solution": "Restructured database indexes and added an automated WebP image pipeline via CDN, decreasing payload weight by 65%.",
+        "impact": "First Contentful Paint dropped to 1.1 seconds on standard 4G connections, boosting buyer session length and re-order conversions.",
         "demoUrl": "https://example.com/demo-agrocommerce",
         "repoUrl": "https://github.com/oswaldtito/agro-commerce",
         "isPlaceholder": true
@@ -77,9 +160,11 @@
         "id": "project-3",
         "title": "FinTrack: Financial Analytics & Operations Dashboard",
         "summary": "Analytics dashboard visualizing revenue trends, operational expenditures, and cash flow forecasts.",
+        "storyContext": "Company leadership spent hours each month parsing through raw multi-thousand-row spreadsheets to evaluate emergency capital expenditure approvals.",
         "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Zod"],
         "challenge": "Non-technical finance teams struggled to navigate raw transaction tables containing thousands of monthly entries.",
         "solution": "Designed concise summary metric cards, interactive date filtering, and one-click PDF audit report exports.",
+        "impact": "Cut monthly cash flow review cycles by 70%, giving decision-makers real-time visibility into operational gross margins.",
         "demoUrl": "https://example.com/demo-fintrack",
         "repoUrl": "https://github.com/oswaldtito/fintrack-dashboard",
         "isPlaceholder": true
@@ -110,32 +195,35 @@
     ]
   },
   "contact": {
-    "badge": "Start a Project",
-    "title": "Let Us Discuss Your Project",
-    "description": "Whether you have a new product idea, need a website rebuild, or want technical advice, I am ready to collaborate.",
-    "whatsappHeading": "Fast Response via WhatsApp",
-    "whatsappDescription": "Reach out directly for quick estimates, availability checks, or immediate requirements.",
-    "whatsappButton": "Send WhatsApp Message",
-    "formHeading": "Send a Project Message",
+    "badge": "Begin a New Chapter",
+    "title": "Let Us Discuss Your Project & Goals",
+    "description": "Every successful digital product begins with a straightforward conversation. Tell me about the challenge you are solving, and let us build the solution.",
+    "whatsappHeading": "Fast-Lane WhatsApp",
+    "whatsappDescription": "Ideal for quick consultations, estimated timelines, or time-sensitive projects needing an answer today.",
+    "whatsappButton": "Open WhatsApp Chat",
+    "formHeading": "Project Inquiry Brief",
+    "formSubtitle": "Fill in your project requirements. I will review the context and reply within 24 business hours.",
     "nameLabel": "Full Name",
     "namePlaceholder": "Your name or organization",
     "emailLabel": "Email Address",
     "emailPlaceholder": "name@company.com",
-    "serviceLabel": "Required Service",
+    "serviceLabel": "Project Scope",
     "serviceOptions": [
       "Full-Stack Web Application",
-      "Company or Personal Website",
+      "Company or Business Website",
       "Custom Software Solution / API Integration",
+      "Performance Audit & Interface Redesign",
       "Technical Consulting"
     ],
     "messageLabel": "Project Scope & Details",
-    "messagePlaceholder": "Share a brief summary of your project, timeline expectations, or technical challenges...",
-    "submitButton": "Send Message",
+    "messagePlaceholder": "Describe the main goals of your project, current obstacles, or expected launch timeline...",
+    "submitButton": "Send Inquiry",
     "submitting": "Sending...",
-    "successMessage": "Thank you! Your message has been sent. I will respond to your email within 24 business hours.",
-    "errorMessage": "Sorry, an error occurred while sending your message. Please reach out directly via WhatsApp.",
+    "successMessage": "Thank you! Your message has been sent. I will review your requirements and reach out via email within 24 hours.",
+    "errorMessage": "Sorry, an error occurred while sending your message. Please reach out directly via WhatsApp for immediate response.",
     "copyEmail": "Copy Email",
-    "emailCopied": "Email address copied to clipboard!"
+    "emailCopied": "Email address copied to clipboard!",
+    "typicalTimeline": "Typical turnaround: Company website 1 to 2 weeks, Full-stack web application 3 to 6 weeks depending on scope."
   },
   "footer": {
     "tagline": "Full-Stack Software Engineer & Web Developer. Based in Indonesia, working with local and global clients.",

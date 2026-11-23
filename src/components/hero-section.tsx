@@ -4,7 +4,7 @@ import React from "react";
 import { useLanguage } from "@/context/language-context";
 import { Hero3DScene } from "@/components/hero-3d-scene";
 import { getWhatsAppLink } from "@/lib/config";
-import { ArrowDown, MessageSquare, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowDown, MessageSquare, Sparkles, BookOpen } from "lucide-react";
 
 export function HeroSection() {
   const { language, t } = useLanguage();
@@ -59,21 +59,29 @@ export function HeroSection() {
               {t.hero.subheadline}
             </p>
 
-            {/* Luxury Action CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            {/* Action CTAs */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-brand-text text-brand-bg font-bold text-sm hover:opacity-90 active:scale-[0.99] transition-all min-h-[48px] shadow-lg shadow-black/10"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-text text-brand-bg font-bold text-sm hover:opacity-90 active:scale-[0.99] transition-all min-h-[48px] shadow-lg shadow-black/10"
               >
                 <span>{t.hero.ctaProjects}</span>
                 <ArrowDown className="w-4 h-4" aria-hidden="true" />
               </a>
 
               <a
+                href="#about"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-brand-border bg-brand-surface/80 backdrop-blur-sm font-semibold text-sm text-brand-text hover:bg-brand-surface-hover hover:border-brand-accent/50 active:scale-[0.99] transition-all min-h-[48px] shadow-sm"
+              >
+                <BookOpen className="w-4 h-4 text-brand-accent" aria-hidden="true" />
+                <span>{t.hero.ctaAbout}</span>
+              </a>
+
+              <a
                 href={getWhatsAppLink(language)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border border-brand-border bg-brand-surface/80 backdrop-blur-sm font-semibold text-sm text-brand-text hover:bg-brand-surface-hover hover:border-brand-accent/50 active:scale-[0.99] transition-all min-h-[48px] shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-brand-accent/30 bg-brand-accent-muted font-semibold text-sm text-brand-text hover:bg-brand-accent/20 transition-all min-h-[48px] shadow-sm"
               >
                 <MessageSquare className="w-4 h-4 text-brand-accent" aria-hidden="true" />
                 <span>{t.hero.ctaWhatsApp}</span>

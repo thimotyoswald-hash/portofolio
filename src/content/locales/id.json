@@ -1,19 +1,97 @@
 {
   "nav": {
-    "services": "Layanan",
+    "about": "Tentang Saya",
     "projects": "Proyek",
+    "services": "Layanan & Alur",
     "stack": "Tech Stack",
     "contact": "Kontak",
     "whatsappCta": "Konsultasi WhatsApp"
   },
   "hero": {
     "role": "Full-Stack Software Engineer & Web Developer",
-    "headline": "Membangun Aplikasi Web dan Rekayasa Perangkat Lunak yang Andal",
+    "headline": "Rekayasa Aplikasi Web & Solusi Software Berkinerja Tinggi",
     "subheadline": "Membantu pemilik bisnis, UMKM, dan agensi mewujudkan website cepat, sistem terukur, serta pengalaman digital yang fokus pada kebutuhan nyata.",
-    "ctaProjects": "Lihat Proyek",
+    "ctaProjects": "Eksplorasi Proyek",
+    "ctaAbout": "Baca Kisah Saya",
     "ctaWhatsApp": "Hubungi via WhatsApp",
     "canvasHint": "Model 3D interaktif: putar dengan kursor atau sentuhan",
-    "status": "Terbuka untuk proyek freelance dan kontrak agensi"
+    "status": "Terbuka untuk proyek freelance dan kontrak agensi",
+    "scrollHint": "Gulir ke bawah untuk membaca perjalanan rekayasa"
+  },
+  "about": {
+    "badge": "Kisah & Filosofi",
+    "title": "Membangun dengan Niat, Menghargai Setiap Detail",
+    "description": "Kisah di balik kode, prinsip rekayasa, dan bagaimana saya membantu klien mengubah ide rumit menjadi produk digital yang berkinerja tinggi.",
+    "storyChapterTitle": "Perjalanan Seorang Digital Craftsman",
+    "storyParagraphs": [
+      "Perjalanan saya di dunia rekayasa perangkat lunak tidak berawal dari teori abstrak, melainkan dari rasa ingin tahu sederhana: bagaimana cara kerja sebuah sistem di balik layar saat jutaan data diproses dalam hitungan detik?",
+      "Seiring waktu, saya menyadari bahwa kode yang hebat bukan sekadar kode yang berhasil dijalankan tanpa error di terminal. Kode yang bermakna adalah jembatan antara logika bisnis yang kompleks dan pengalaman antarmuka yang terasa ringan, manusiawi, serta memuaskan bagi pengguna akhir.",
+      "Sebagai Full-Stack Engineer yang juga mendalami desain 3D dan interaksi visual, saya menolak dikotomi antara tampilan indah dan performa teknis. Website yang baik harus memiliki fondasi basis data yang tangguh di bagian belakang, sekaligus menghadirkan keanggunan interaktif di bagian depan."
+    ],
+    "principlesBadge": "Manifesto Rekayasa",
+    "principlesTitle": "Tiga Prinsip yang Selalu Saya Pegang Teguh",
+    "principles": [
+      {
+        "number": "01",
+        "title": "Arsitektur Bersih & Tahan Uji",
+        "desc": "Saya membangun sistem dengan pondasi tipe data ketat (TypeScript), kueri terindeks, dan transaksi atomic. Kode harus mudah dibaca oleh tim pengembang lain dan siap bertumbuh bersama bisnis Anda."
+      },
+      {
+        "number": "02",
+        "title": "Performa Tanpa Kompromi",
+        "desc": "Kecepatan adalah fitur utama, bukan polesan akhir. Target saya adalah First Contentful Paint di bawah 1.2 detik, rendering 60 FPS pada elemen 3D/WebGL, dan skor Google Lighthouse di atas 90."
+      },
+      {
+        "number": "03",
+        "title": "Komunikasi Jujur & Transparan",
+        "desc": "Tidak ada istilah teknis rumit yang digunakan untuk menutup-nutupi progres. Klien mendapatkan pembaruan berkala, estimasi waktu realistis, dan akses langsung ke repository kode."
+      }
+    ],
+    "processBadge": "Alur Kerja Nyata",
+    "processTitle": "Bagaimana Kita Akan Bekerja Bersama",
+    "processSubtitle": "Proses empat langkah terstruktur dari konsep awal hingga produk siap pakai di tangan pengguna:",
+    "processSteps": [
+      {
+        "step": "Fase 01",
+        "title": "Discovery & Cetak Biru Arsitektur",
+        "desc": "Kita mendiskusikan inti masalah bisnis, target pengguna, dan alur data utama. Hasilnya adalah spesifikasi teknis jelas, skema database, dan rencana milestone."
+      },
+      {
+        "step": "Fase 02",
+        "title": "Prototipe Interaktif & Desain UI/3D",
+        "desc": "Merancang tata letak visual, hierarki tipografi, dan elemen interaktif 3D. Memastikan responsivitas layar ponsel hingga desktop lebar sebelum penulisan kode skala besar."
+      },
+      {
+        "step": "Fase 03",
+        "title": "Pengembangan Full-Stack & Validasi",
+        "desc": "Membangun frontend dengan Next.js App Router dan backend API yang aman. Validasi data ketat menggunakan Zod serta pengujian integrasi database."
+      },
+      {
+        "step": "Fase 04",
+        "title": "Audit Lighthouse, Deploy & Serah Terima",
+        "desc": "Optimasi aset gambar, audit aksesibilitas WCAG AA, konfigurasi SEO dinamis, deployment ke Vercel, dan penyerahan dokumentasi kode lengkap."
+      }
+    ],
+    "guaranteesBadge": "Jaminan untuk Klien",
+    "guaranteesTitle": "Apa yang Selalu Anda Dapatkan",
+    "guarantees": [
+      {
+        "title": "Kepemilikan Penuh Source Code",
+        "desc": "Seluruh hak cipta kode, repository GitHub, dan kredensial hosting diserahkan 100% kepada Anda tanpa ketergantungan sepihak."
+      },
+      {
+        "title": "Garansi Perbaikan Bug 30 Hari",
+        "desc": "Dukungan teknis paska peluncuran untuk memastikan aplikasi berjalan tanpa kendala di lingkungan produksi nyata."
+      },
+      {
+        "title": "Respon Cepat via WhatsApp / Email",
+        "desc": "Komunikasi langsung dengan saya selaku teknisi utama, tanpa perantara sales atau account manager."
+      },
+      {
+        "title": "Optimasi SEO & Kecepatan Bawaan",
+        "desc": "Setiap halaman dilengkapi metadata Open Graph, sitemap.xml, robots.txt, dan struktur URL yang ramah mesin pencari."
+      }
+    ]
   },
   "services": {
     "badge": "Layanan Utama",
@@ -41,23 +119,26 @@
     ]
   },
   "projects": {
-    "badge": "Portofolio Pilihan",
-    "title": "Proyek Nyata & Studi Kasus Rekayasa",
-    "description": "Kumpulan hasil kerja dengan fokus pada solusi teknis, arsitektur modular, dan kegunaan langsung bagi pengguna.",
+    "badge": "Studi Kasus Rekayasa",
+    "title": "Kisah Nyata di Balik Arsitektur Perangkat Lunak",
+    "description": "Bukan sekadar galeri screenshot, melainkan pembedahan tantangan teknis nyata, keputusan arsitektur, dan hasil operasional yang terukur.",
     "viewCode": "Lihat Kode",
     "liveDemo": "Buka Demo",
-    "details": "Detail Studi Kasus",
-    "challengeLabel": "Tantangan",
+    "details": "Baca Studi Kasus",
+    "challengeLabel": "Tantangan Utama",
     "solutionLabel": "Solusi Rekayasa",
     "architectureLabel": "Arsitektur",
+    "impactLabel": "Dampak Terukur",
     "items": [
       {
         "id": "project-1",
         "title": "Enterprise Inventory & Procurement System",
         "summary": "Platform manajemen inventaris multi-gudang dan pencatatan rantai pasok dengan pelaporan stok real-time.",
+        "storyContext": "Klien mengelola empat gudang terpisah dengan volume transaksi tinggi. Sistem lama mereka sering mencatat stok minus saat dua cabang menjual barang yang sama di detik yang sama.",
         "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
-        "challenge": "Sinkronisasi stok di 4 gudang berbeda sering mengalami race condition saat pesanan masuk bersamaan.",
-        "solution": "Menerapkan transaksi database berbasis isolasi Serializable dan caching status stok di Redis untuk respons instan.",
+        "challenge": "Sinkronisasi stok di 4 gudang berbeda sering mengalami race condition saat pesanan masuk bersamaan pada jam sibuk.",
+        "solution": "Menerapkan transaksi database berbasis isolasi Serializable dan caching status ketersediaan di Redis untuk respon kilat tanpa tabrakan data.",
+        "impact": "Menghilangkan 100% anomali stok ganda dan memangkas waktu pemrosesan laporan gudang harian dari 45 menit menjadi hitungan detik.",
         "demoUrl": "https://example.com/demo-inventory",
         "repoUrl": "https://github.com/oswaldtito/inventory-system",
         "isPlaceholder": true
@@ -66,9 +147,11 @@
         "id": "project-2",
         "title": "AgroCommerce: B2B Marketplace & Katalog Digital",
         "summary": "Platform transaksi komoditas grosir dengan kalkulator logistik otomatis dan verifikasi faktur digital.",
+        "storyContext": "Pelaku usaha grosir membutuhkan katalog online yang dapat diakses petani dan pembeli di daerah dengan koneksi internet terbatas di ponsel mereka.",
         "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
-        "challenge": "Waktu muat katalog lambat karena gambar produk berukuran besar dan query filter kategori yang tidak terindeks.",
-        "solution": "Restrukturisasi indexing database dan kompresi gambar otomatis ke format WebP via CDN, menurunkan FCP menjadi 1.1 detik.",
+        "challenge": "Waktu muat katalog lambat karena gambar produk berukuran besar dan kueri filter kategori multi-level yang tidak terindeks.",
+        "solution": "Restrukturisasi indexing database dan kompresi gambar otomatis ke format WebP via CDN, menurunkan ukuran transfer data hingga 65%.",
+        "impact": "First Contentful Paint turun menjadi 1.1 detik pada jaringan 4G standar, meningkatkan durasi kunjungan dan pemesanan ulang grosir.",
         "demoUrl": "https://example.com/demo-agrocommerce",
         "repoUrl": "https://github.com/oswaldtito/agro-commerce",
         "isPlaceholder": true
@@ -77,9 +160,11 @@
         "id": "project-3",
         "title": "FinTrack: Dashboard Keuangan & Monitoring Operasional",
         "summary": "Antarmuka analitik metrik pendapatan, pengeluaran kas, dan visualisasi grafik arus kas interaktif.",
+        "storyContext": "Manajemen perusahaan kesulitan membaca ribuan baris spreadsheet manual setiap akhir bulan untuk mengambil keputusan pengeluaran darurat.",
         "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Zod"],
         "challenge": "Pengguna non-teknis kesulitan memahami tabel data keuangan mentah dengan ribuan baris transaksi bulanan.",
         "solution": "Membuat visualisasi kartu metrik ringkas, filter tanggal reaktif, dan fitur ekspor laporan audit PDF sekali klik.",
+        "impact": "Waktu evaluasi arus kas bulanan berkurang hingga 70%, memberikan visibilitas margin keuntungan secara real-time kepada para pemegang keputusan.",
         "demoUrl": "https://example.com/demo-fintrack",
         "repoUrl": "https://github.com/oswaldtito/fintrack-dashboard",
         "isPlaceholder": true
@@ -89,7 +174,7 @@
   "stack": {
     "badge": "Keahlian Teknis",
     "title": "Tech Stack & Perkakas Rekayasa",
-    "description": "Teknologi yang saya gunakan secara rutin untuk membangun produk digital yang stabil dan berkinerja tinggi.",
+    "description": "Teknologi yang saya gunakan secara rutin untuk membangun produk digital yang stabil, aman, dan berkinerja tinggi.",
     "categories": [
       {
         "name": "Frontend Development",
@@ -110,32 +195,35 @@
     ]
   },
   "contact": {
-    "badge": "Mulai Kolaborasi",
-    "title": "Mari Diskusikan Proyek Anda",
-    "description": "Apakah Anda memiliki proyek baru, butuh pembaruan website, atau ingin berdiskusi teknis? Saya siap membantu.",
-    "whatsappHeading": "Respon Cepat via WhatsApp",
-    "whatsappDescription": "Hubungi langsung untuk konsultasi singkat, estimasi waktu, atau diskusi kebutuhan mendesak.",
-    "whatsappButton": "Kirim Pesan WhatsApp",
-    "formHeading": "Kirim Formulir Kontak",
+    "badge": "Mulai Babak Baru",
+    "title": "Mari Bicarakan Proyek dan Rencana Anda",
+    "description": "Setiap produk digital yang sukses selalu berawal dari sebuah percakapan terbuka. Ceritakan apa yang ingin Anda selesaikan, dan mari kita wujudkan solusinya.",
+    "whatsappHeading": "Jalur Cepat WhatsApp",
+    "whatsappDescription": "Pilihan tepat untuk konsultasi singkat, tanya estimasi waktu, atau kebutuhan mendesak yang butuh respon hari ini.",
+    "whatsappButton": "Buka Percakapan WhatsApp",
+    "formHeading": "Kirim Formulir Briefing Proyek",
+    "formSubtitle": "Isi rincian kebutuhan Anda. Saya akan mempelajari konteksnya dan membalas dalam waktu 1x24 jam kerja.",
     "nameLabel": "Nama Lengkap",
-    "namePlaceholder": "Nama Anda atau Perusahaan",
+    "namePlaceholder": "Nama Anda atau Nama Perusahaan",
     "emailLabel": "Alamat Email",
     "emailPlaceholder": "email@perusahaan.com",
-    "serviceLabel": "Layanan yang Dibutuhkan",
+    "serviceLabel": "Kebutuhan Proyek",
     "serviceOptions": [
       "Pembuatan Aplikasi Web Full-Stack",
-      "Website Perusahaan atau Personal",
+      "Website Perusahaan atau Profil Bisnis",
       "Solusi Software Khusus / Integrasi API",
+      "Audit Performa & Desain Ulang Antarmuka",
       "Konsultasi Teknis Lainnya"
     ],
-    "messageLabel": "Detail Kebutuhan Proyek",
-    "messagePlaceholder": "Ceritakan ringkasan proyek, target waktu, atau masalah teknis yang ingin diselesaikan...",
+    "messageLabel": "Ceritakan Ringkasan Proyek Anda",
+    "messagePlaceholder": "Jelaskan target proyek, masalah yang dihadapi saat ini, atau jadwal peluncuran yang diharapkan...",
     "submitButton": "Kirim Pesan Sekarang",
     "submitting": "Mengirim...",
-    "successMessage": "Terima kasih! Pesan Anda telah terkirim. Saya akan merespon melalui email dalam waktu 1x24 jam kerja.",
-    "errorMessage": "Mohon maaf, terjadi kendala saat mengirim pesan. Silakan gunakan WhatsApp untuk respon instan.",
+    "successMessage": "Terima kasih! Pesan Anda telah terkirim. Saya akan meninjau rincian proyek dan menghubungi Anda via email dalam 1x24 jam.",
+    "errorMessage": "Mohon maaf, terjadi kendala saat mengirim pesan. Silakan hubungi langsung via WhatsApp untuk respon instan.",
     "copyEmail": "Salin Email",
-    "emailCopied": "Email tersalin ke clipboard!"
+    "emailCopied": "Email tersalin ke clipboard!",
+    "typicalTimeline": "Estimasi waktu tipikal: Website profil 1 sampai 2 minggu, Aplikasi full-stack 3 sampai 6 minggu tergantung cakupan."
   },
   "footer": {
     "tagline": "Full-Stack Software Engineer & Web Developer. Berbasis di Indonesia, melayani klien lokal dan global.",

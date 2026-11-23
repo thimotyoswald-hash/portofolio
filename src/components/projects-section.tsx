@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/language-context";
-import { ExternalLink, Github, ArrowUpRight, X, Layers, Cpu, Database } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, X, Sparkles, CheckCircle2 } from "lucide-react";
 
 export function ProjectsSection() {
   const { t } = useLanguage();
@@ -100,13 +100,23 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Info Block */}
-                <div className="p-7 space-y-3">
-                  <h3 className="text-xl font-bold text-brand-text group-hover:text-brand-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-brand-muted line-clamp-3 leading-relaxed">
-                    {project.summary}
-                  </p>
+                <div className="p-7 space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-brand-text group-hover:text-brand-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-brand-muted line-clamp-3 leading-relaxed">
+                      {project.summary}
+                    </p>
+                  </div>
+
+                  {/* Measurable Impact Badge */}
+                  {project.impact && (
+                    <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-emerald-400" />
+                      <span className="leading-snug">{project.impact}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -184,13 +194,18 @@ export function ProjectsSection() {
               </button>
             </div>
 
-            {/* Summary */}
-            <p className="text-sm text-brand-muted leading-relaxed">
-              {activeModalProject.summary}
-            </p>
+            {/* Story Context / Background */}
+            {activeModalProject.storyContext && (
+              <div className="p-4 rounded-2xl bg-brand-bg/80 border border-brand-border/60 text-xs sm:text-sm text-brand-muted leading-relaxed">
+                <span className="font-semibold text-brand-text block mb-1">
+                  Konteks & Latar Belakang Klien:
+                </span>
+                {activeModalProject.storyContext}
+              </div>
+            )}
 
             {/* Challenge & Solution Architecture Boxes */}
-            <div className="space-y-4 pt-4 border-t border-brand-border">
+            <div className="space-y-4 pt-2">
               <div className="p-5 rounded-2xl bg-brand-bg border border-brand-border space-y-2">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-rose-400 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-rose-400" />
@@ -210,6 +225,18 @@ export function ProjectsSection() {
                   {activeModalProject.solution}
                 </p>
               </div>
+
+              {activeModalProject.impact && (
+                <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    {t.projects.impactLabel}
+                  </span>
+                  <p className="text-sm text-brand-text leading-relaxed">
+                    {activeModalProject.impact}
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Architecture Stack */}
@@ -218,12 +245,12 @@ export function ProjectsSection() {
                 Tech Stack Architecture:
               </h4>
               <div className="flex flex-wrap gap-2">
-                {activeModalProject.tech.map((t: string, i: number) => (
+                {activeModalProject.tech.map((techItem: string, i: number) => (
                   <span
                     key={i}
                     className="px-3 py-1.5 text-xs font-mono rounded-xl border border-brand-border bg-brand-bg text-brand-text"
                   >
-                    {t}
+                    {techItem}
                   </span>
                 ))}
               </div>
