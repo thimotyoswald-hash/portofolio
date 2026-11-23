@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* Light Theme tokens - Luxury Ceramic & Burnished Bronze */
-  --bg-primary: #FBFBFD;
+  /* Light Theme tokens - Calm Slate & Soft Sky */
+  --bg-primary: #F8FAFC;
   --bg-surface: #FFFFFF;
-  --bg-surface-hover: #F4F5F8;
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-focus: #9A7228;
-  --text-primary: #090C10;
-  --text-secondary: #4B5563;
-  --accent-primary: #9A7228;
-  --accent-muted: rgba(154, 114, 40, 0.08);
+  --bg-surface-hover: #F1F5F9;
+  --border-subtle: #E2E8F0;
+  --border-focus: #0284C7;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --accent-primary: #0284C7;
+  --accent-muted: rgba(2, 132, 199, 0.08);
   --color-success: #059669;
 }
 
 .dark {
-  /* Dark Theme tokens - Luxury Obsidian Onyx & Champagne Gold */
-  --bg-primary: #060709;
-  --bg-surface: #0E1118;
-  --bg-surface-hover: #161B26;
+  /* Dark Theme tokens - Comfortable Deep Midnight Slate & Soft Sky */
+  --bg-primary: #0B0F17;
+  --bg-surface: #131823;
+  --bg-surface-hover: #1B2232;
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: #D4AF37;
-  --text-primary: #FFFFFF;
-  --text-secondary: #9CA3AF;
-  --accent-primary: #D4AF37;
-  --accent-muted: rgba(212, 175, 55, 0.12);
+  --border-focus: #38BDF8;
+  --text-primary: #E6EDF3;
+  --text-secondary: #94A3B8;
+  --accent-primary: #38BDF8;
+  --accent-muted: rgba(56, 189, 248, 0.1);
   --color-success: #34D399;
 }
 
@@ -68,16 +68,16 @@
     outline-offset: 3px;
   }
 
-  /* Subtle luxury backdrop blur */
+  /* Comfortable glass card treatment */
   .glass-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
   }
 
   .dark .glass-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%), var(--bg-surface);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%), var(--bg-surface);
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   /* Respect reduced motion */

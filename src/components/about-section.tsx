@@ -85,7 +85,7 @@ export function AboutSection() {
               </div>
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
-                <span>Three.js & 60 FPS WebGL</span>
+                <span>Interaksi UI Halus & 60 FPS</span>
               </div>
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />

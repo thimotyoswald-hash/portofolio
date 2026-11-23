@@ -14,7 +14,7 @@
     "ctaProjects": "Eksplorasi Proyek",
     "ctaAbout": "Baca Kisah Saya",
     "ctaWhatsApp": "Hubungi via WhatsApp",
-    "canvasHint": "Model 3D interaktif: putar dengan kursor atau sentuhan",
+    "canvasHint": "Workbench interaktif: Uji alur arsitektur dan latensi sistem secara langsung",
     "status": "Terbuka untuk proyek freelance dan kontrak agensi",
     "scrollHint": "Gulir ke bawah untuk membaca perjalanan rekayasa"
   },
@@ -26,7 +26,7 @@
     "storyParagraphs": [
       "Perjalanan saya di dunia rekayasa perangkat lunak tidak berawal dari teori abstrak, melainkan dari rasa ingin tahu sederhana: bagaimana cara kerja sebuah sistem di balik layar saat jutaan data diproses dalam hitungan detik?",
       "Seiring waktu, saya menyadari bahwa kode yang hebat bukan sekadar kode yang berhasil dijalankan tanpa error di terminal. Kode yang bermakna adalah jembatan antara logika bisnis yang kompleks dan pengalaman antarmuka yang terasa ringan, manusiawi, serta memuaskan bagi pengguna akhir.",
-      "Sebagai Full-Stack Engineer yang juga mendalami desain 3D dan interaksi visual, saya menolak dikotomi antara tampilan indah dan performa teknis. Website yang baik harus memiliki fondasi basis data yang tangguh di bagian belakang, sekaligus menghadirkan keanggunan interaktif di bagian depan."
+      "Sebagai Full-Stack Engineer yang mendalami arsitektur modern dan interaksi antarmuka yang presisi, saya menolak dikotomi antara tampilan indah dan performa teknis. Website yang baik harus memiliki fondasi basis data yang tangguh di bagian belakang, sekaligus menghadirkan keanggunan interaktif di bagian depan."
     ],
     "principlesBadge": "Manifesto Rekayasa",
     "principlesTitle": "Tiga Prinsip yang Selalu Saya Pegang Teguh",

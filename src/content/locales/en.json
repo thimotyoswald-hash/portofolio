@@ -14,7 +14,7 @@
     "ctaProjects": "Explore Projects",
     "ctaAbout": "Read My Story",
     "ctaWhatsApp": "Chat via WhatsApp",
-    "canvasHint": "Interactive 3D model: rotate using cursor or touch",
+    "canvasHint": "Interactive workbench: Test architecture flow and system latency live",
     "status": "Available for freelance projects and agency contracts",
     "scrollHint": "Scroll down to explore the engineering journey"
   },
@@ -26,7 +26,7 @@
     "storyParagraphs": [
       "My path in software engineering did not begin with abstract theory, but with a simple curiosity: how do systems operate behind the screen when thousands of requests resolve in milliseconds?",
       "Over time, I recognized that great code is not merely code that runs without errors in a terminal. Meaningful software bridges complex business logic with user interfaces that feel intuitive, responsive, and respectful of human attention.",
-      "As a Full-Stack Engineer who also explores 3D design and interaction craft, I reject the false tradeoff between visual polish and technical performance. A serious web application must possess a resilient database foundation in the back while delivering effortless interactivity in the front."
+      "As a Full-Stack Engineer dedicated to modern architecture and refined interface interactions, I reject the false tradeoff between visual polish and technical performance. A serious web application must possess a resilient database foundation in the back while delivering effortless interactivity in the front."
     ],
     "principlesBadge": "Engineering Manifesto",
     "principlesTitle": "Three Core Tenets I Uphold in Every Project",
