@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "@/context/language-context";
 import { SITE_CONFIG } from "@/lib/config";
 import Image from "next/image";
@@ -18,10 +18,34 @@ import {
   MapPin,
   Clock,
   Sparkles,
+  Camera,
 } from "lucide-react";
 
 export function AboutSection() {
   const { t, language } = useLanguage();
+
+  const profilePhotos = [
+    {
+      id: "portrait",
+      label: language === "id" ? "Portrait" : "Portrait",
+      src: "/4.jpeg",
+      caption: "Oswald Tito — Full-Stack Engineer & Builder",
+    },
+    {
+      id: "studio",
+      label: language === "id" ? "Studio" : "Studio",
+      src: "/9.jpg",
+      caption: "Kreativitas di luar kode — Sound & Electric Guitar",
+    },
+    {
+      id: "outdoor",
+      label: language === "id" ? "Santai" : "Casual",
+      src: "/1.jpeg",
+      caption: "Momen santai & eksplorasi",
+    },
+  ];
+
+  const [activePhotoIdx, setActivePhotoIdx] = useState(0);
 
   const principleIcons = [
     <Compass
@@ -137,81 +161,123 @@ export function AboutSection() {
 
           {/* Luxury Studio Profile Snapshot Card */}
           <div className="lg:col-span-5">
-            <div className="relative p-8 sm:p-10 rounded-3xl border border-brand-border bg-brand-surface shadow-2xl space-y-6 overflow-hidden">
+            <div className="relative rounded-3xl border border-brand-border bg-brand-surface shadow-2xl overflow-hidden group">
               {/* Subtle metallic sheen gradient */}
               <div
-                className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-accent/15 via-transparent to-transparent pointer-events-none rounded-bl-full"
+                className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-accent/15 via-transparent to-transparent pointer-events-none rounded-bl-full z-10"
                 aria-hidden="true"
               />
 
-              <div className="flex items-center justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-brand-bg border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-xl font-extrabold shadow-sm">
-                  <Image
-                    src="/4.jpeg"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="rounded-2xl"
-                  />
-                </div>
-                <div className="text-right">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+              {/* Profile Photo Display */}
+              <div className="relative aspect-[4/4.5] sm:aspect-[4/4] lg:aspect-[4/4.2] w-full overflow-hidden bg-brand-bg/80 border-b border-brand-border">
+                <Image
+                  src={profilePhotos[activePhotoIdx].src}
+                  alt={profilePhotos[activePhotoIdx].caption}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 450px"
+                  className="object-cover object-[50%_18%] transition-all duration-700 ease-out group-hover:scale-[1.02]"
+                />
+
+                {/* Ambient photo overlays */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-brand-surface via-transparent to-black/30 pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-surface/85 backdrop-blur-md border border-brand-border/80 text-brand-text text-xs font-medium shadow-md">
+                    <MapPin className="w-3.5 h-3.5 text-brand-accent" aria-hidden="true" />
+                    <span>Indonesia</span>
+                  </span>
+
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-surface/85 backdrop-blur-md border border-brand-border/80 text-emerald-400 text-xs font-semibold shadow-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>Active for Projects</span>
                   </span>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-brand-text">
-                  {SITE_CONFIG.name}
-                </h3>
-                <p className="text-xs font-mono text-brand-accent tracking-wider uppercase mt-1">
-                  {SITE_CONFIG.role}
-                </p>
-              </div>
+                {/* Interactive Photo Switcher Pills */}
+                <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 p-1 rounded-xl bg-brand-surface/85 backdrop-blur-md border border-brand-border/70 shadow-lg">
+                    {profilePhotos.map((photo, pIdx) => (
+                      <button
+                        key={photo.id}
+                        type="button"
+                        onClick={() => setActivePhotoIdx(pIdx)}
+                        className={`px-2.5 py-1 text-[11px] font-mono font-bold rounded-lg transition-all ${
+                          activePhotoIdx === pIdx
+                            ? "bg-brand-accent text-brand-bg shadow-sm"
+                            : "text-brand-muted hover:text-brand-text hover:bg-brand-surface/80"
+                        }`}
+                        aria-label={`Lihat foto ${photo.label}`}
+                      >
+                        {photo.label}
+                      </button>
+                    ))}
+                  </div>
 
-              {/* Quotation / Personal Philosophy */}
-              <div className="p-4 rounded-2xl bg-brand-bg/80 border border-brand-border/60 relative">
-                <Quote
-                  className="w-4 h-4 text-brand-accent/40 absolute top-3 left-3"
-                  aria-hidden="true"
-                />
-                <p className="text-xs text-brand-muted pl-6 italic leading-relaxed">
-                  {language === "id"
-                    ? "Kode harus dijalankan dengan presisi matematis, sementara antarmukanya terasa alami dan menghargai manusia yang menggunakannya."
-                    : "Code should execute with mathematical precision, while the interface feels effortless and respectful of the human using it."}
-                </p>
-              </div>
-
-              {/* Practical Details */}
-              <div className="space-y-3 pt-2 text-xs text-brand-muted border-t border-brand-border/60">
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-brand-accent" />
-                    <span>Lokasi & Basis:</span>
-                  </span>
-                  <span className="font-semibold text-brand-text">
-                    Indonesia (Remote Global)
+                  <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-brand-muted bg-brand-surface/80 backdrop-blur-md px-2 py-1 rounded-lg border border-brand-border/50">
+                    <Camera className="w-3 h-3 text-brand-accent" aria-hidden="true" />
+                    <span>{activePhotoIdx + 1}/{profilePhotos.length}</span>
                   </span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-3.5 h-3.5 text-brand-accent" />
-                    <span>Ketersediaan Waktu:</span>
-                  </span>
-                  <span className="font-semibold text-brand-text">
-                    Freelance & Kontrak Agensi
-                  </span>
+              </div>
+
+              {/* Profile Details Container */}
+              <div className="p-6 sm:p-8 space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-brand-text tracking-tight">
+                    {SITE_CONFIG.name}
+                  </h3>
+                  <p className="text-xs font-mono text-brand-accent tracking-wider uppercase mt-1">
+                    {SITE_CONFIG.role}
+                  </p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
-                    <span>Bahasa Komunikasi:</span>
-                  </span>
-                  <span className="font-semibold text-brand-text">
-                    Bahasa Indonesia & English
-                  </span>
+
+                {/* Quotation / Personal Philosophy */}
+                <div className="p-4 rounded-2xl bg-brand-bg/80 border border-brand-border/60 relative">
+                  <Quote
+                    className="w-4 h-4 text-brand-accent/40 absolute top-3 left-3"
+                    aria-hidden="true"
+                  />
+                  <p className="text-xs text-brand-muted pl-6 italic leading-relaxed">
+                    {language === "id"
+                      ? "Kode harus dijalankan dengan presisi matematis, sementara antarmukanya terasa alami dan menghargai manusia yang menggunakannya."
+                      : "Code should execute with mathematical precision, while the interface feels effortless and respectful of the human using it."}
+                  </p>
+                </div>
+
+                {/* Practical Details */}
+                <div className="space-y-3 pt-2 text-xs text-brand-muted border-t border-brand-border/60">
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2">
+                      <MapPin className="w-3.5 h-3.5 text-brand-accent" />
+                      <span>Lokasi & Basis:</span>
+                    </span>
+                    <span className="font-semibold text-brand-text">
+                      Indonesia (Remote Global)
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2">
+                      <Clock className="w-3.5 h-3.5 text-brand-accent" />
+                      <span>Ketersediaan Waktu:</span>
+                    </span>
+                    <span className="font-semibold text-brand-text">
+                      Freelance & Kontrak Agensi
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2">
+                      <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
+                      <span>Bahasa Komunikasi:</span>
+                    </span>
+                    <span className="font-semibold text-brand-text">
+                      Bahasa Indonesia & English
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

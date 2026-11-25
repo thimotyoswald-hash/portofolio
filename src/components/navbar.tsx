@@ -51,8 +51,14 @@ export function Navbar() {
           href="#"
           className="flex items-center gap-3 font-bold text-lg text-brand-text tracking-tight group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-xl p-1"
         >
-          <span className="w-9 h-9 rounded-xl bg-brand-surface border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-sm font-extrabold group-hover:scale-105 group-hover:border-brand-accent transition-all shadow-sm">
-            <Image src="/6.jpeg" alt="" width={20} height={20} className="rounded-xl" />
+          <span className="w-9 h-9 rounded-xl bg-brand-surface border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-sm font-extrabold group-hover:scale-105 group-hover:border-brand-accent transition-all shadow-sm overflow-hidden relative">
+            <Image
+              src="/4.jpeg"
+              alt={SITE_CONFIG.name}
+              fill
+              sizes="36px"
+              className="object-cover object-[50%_18%] rounded-xl"
+            />
           </span>
           <div className="hidden sm:block leading-none">
             <span className="block font-bold text-sm tracking-tight">
