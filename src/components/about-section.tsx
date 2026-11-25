@@ -3,6 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/context/language-context";
 import { SITE_CONFIG } from "@/lib/config";
+import Image from "next/image";
 import {
   Compass,
   Zap,
@@ -23,16 +24,40 @@ export function AboutSection() {
   const { t, language } = useLanguage();
 
   const principleIcons = [
-    <Compass key="arch" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
+    <Compass
+      key="arch"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
     <Zap key="perf" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
-    <MessageCircle key="collab" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
+    <MessageCircle
+      key="collab"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
   ];
 
   const processIcons = [
-    <FileCode2 key="disc" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
-    <Palette key="proto" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
-    <Server key="build" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
-    <Rocket key="launch" className="w-5 h-5 text-brand-accent" aria-hidden="true" />,
+    <FileCode2
+      key="disc"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
+    <Palette
+      key="proto"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
+    <Server
+      key="build"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
+    <Rocket
+      key="launch"
+      className="w-5 h-5 text-brand-accent"
+      aria-hidden="true"
+    />,
   ];
 
   return (
@@ -80,19 +105,31 @@ export function AboutSection() {
             {/* Quick Core Commitments */}
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                <CheckCircle
+                  className="w-4 h-4 text-emerald-400 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>Next.js App Router & TypeScript</span>
               </div>
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                <CheckCircle
+                  className="w-4 h-4 text-emerald-400 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>Interaksi UI Halus & 60 FPS</span>
               </div>
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                <CheckCircle
+                  className="w-4 h-4 text-emerald-400 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>Prisma, PostgreSQL & Redis</span>
               </div>
               <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-brand-border bg-brand-surface text-xs font-medium text-brand-text">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                <CheckCircle
+                  className="w-4 h-4 text-emerald-400 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>Aksesibilitas WCAG AA Standard</span>
               </div>
             </div>
@@ -109,7 +146,13 @@ export function AboutSection() {
 
               <div className="flex items-center justify-between">
                 <div className="w-14 h-14 rounded-2xl bg-brand-bg border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-xl font-extrabold shadow-sm">
-                  OT
+                  <Image
+                    src="/4.jpeg"
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="rounded-2xl"
+                  />
                 </div>
                 <div className="text-right">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
@@ -130,7 +173,10 @@ export function AboutSection() {
 
               {/* Quotation / Personal Philosophy */}
               <div className="p-4 rounded-2xl bg-brand-bg/80 border border-brand-border/60 relative">
-                <Quote className="w-4 h-4 text-brand-accent/40 absolute top-3 left-3" aria-hidden="true" />
+                <Quote
+                  className="w-4 h-4 text-brand-accent/40 absolute top-3 left-3"
+                  aria-hidden="true"
+                />
                 <p className="text-xs text-brand-muted pl-6 italic leading-relaxed">
                   {language === "id"
                     ? "Kode harus dijalankan dengan presisi matematis, sementara antarmukanya terasa alami dan menghargai manusia yang menggunakannya."
@@ -145,21 +191,27 @@ export function AboutSection() {
                     <MapPin className="w-3.5 h-3.5 text-brand-accent" />
                     <span>Lokasi & Basis:</span>
                   </span>
-                  <span className="font-semibold text-brand-text">Indonesia (Remote Global)</span>
+                  <span className="font-semibold text-brand-text">
+                    Indonesia (Remote Global)
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-brand-accent" />
                     <span>Ketersediaan Waktu:</span>
                   </span>
-                  <span className="font-semibold text-brand-text">Freelance & Kontrak Agensi</span>
+                  <span className="font-semibold text-brand-text">
+                    Freelance & Kontrak Agensi
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
                     <span>Bahasa Komunikasi:</span>
                   </span>
-                  <span className="font-semibold text-brand-text">Bahasa Indonesia & English</span>
+                  <span className="font-semibold text-brand-text">
+                    Bahasa Indonesia & English
+                  </span>
                 </div>
               </div>
             </div>

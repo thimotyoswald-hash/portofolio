@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useLanguage } from "@/context/language-context";
 import { SITE_CONFIG, getWhatsAppLink } from "@/lib/config";
 import { Sun, Moon, Globe, Menu, X, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export function Navbar() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -51,10 +52,12 @@ export function Navbar() {
           className="flex items-center gap-3 font-bold text-lg text-brand-text tracking-tight group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-xl p-1"
         >
           <span className="w-9 h-9 rounded-xl bg-brand-surface border border-brand-accent/40 text-brand-accent flex items-center justify-center font-mono text-sm font-extrabold group-hover:scale-105 group-hover:border-brand-accent transition-all shadow-sm">
-            OT
+            <Image src="/6.jpeg" alt="" width={20} height={20} className="rounded-xl" />
           </span>
           <div className="hidden sm:block leading-none">
-            <span className="block font-bold text-sm tracking-tight">{SITE_CONFIG.name}</span>
+            <span className="block font-bold text-sm tracking-tight">
+              {SITE_CONFIG.name}
+            </span>
             <span className="block font-mono text-[10px] text-brand-muted tracking-wider uppercase mt-0.5">
               Software Studio
             </span>
@@ -86,7 +89,10 @@ export function Navbar() {
             aria-label={`Ubah bahasa ke ${language === "id" ? "English" : "Bahasa Indonesia"}`}
             className="flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-bold rounded-xl border border-brand-border bg-brand-surface text-brand-muted hover:text-brand-text hover:border-brand-accent/40 transition-colors min-h-[44px] min-w-[44px] justify-center"
           >
-            <Globe className="w-3.5 h-3.5 text-brand-accent" aria-hidden="true" />
+            <Globe
+              className="w-3.5 h-3.5 text-brand-accent"
+              aria-hidden="true"
+            />
             <span>{language.toUpperCase()}</span>
           </button>
 
@@ -105,7 +111,10 @@ export function Navbar() {
               {resolvedTheme === "dark" ? (
                 <Sun className="w-4 h-4 text-amber-400" aria-hidden="true" />
               ) : (
-                <Moon className="w-4 h-4 text-brand-accent" aria-hidden="true" />
+                <Moon
+                  className="w-4 h-4 text-brand-accent"
+                  aria-hidden="true"
+                />
               )}
             </button>
           )}
@@ -127,7 +136,9 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-panel"
-            aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+            aria-label={
+              mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"
+            }
             className="md:hidden p-2.5 rounded-xl border border-brand-border bg-brand-surface text-brand-text hover:bg-brand-surface-hover min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             {mobileMenuOpen ? (
